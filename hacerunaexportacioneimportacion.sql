@@ -1,0 +1,4 @@
+--desde sqlplus CREATE OR REPLACE DIRECTORY EXPDP_DIR AS '/u01/exports/oracle';
+--dar permisos al usuario dueño   GRANT READ, WRITE ON DIRECTORY EXPDP_DIR TO system;
+--desde la shell correr expdp system/manager1 FULL=Y DIRECTORY=EXPDP_DIR DUMPFILE=full_db.dmp LOGFILE=full_db.log
+--para importar impdp system/tu_password FULL=Y DIRECTORY=EXPDIR DUMPFILE=backup_full.dmp LOGFILE=import_full.log
