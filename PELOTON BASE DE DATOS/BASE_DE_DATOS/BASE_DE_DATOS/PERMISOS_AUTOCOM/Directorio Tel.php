@@ -1,0 +1,25 @@
+<?php
+
+			
+GRANT CONNECT TO '660787';
+GRANT SELECT ON armas TO '660787';
+GRANT SELECT ON grados TO '660787';
+GRANT SELECT ON mper TO '660787';
+GRANT SELECT ON mdep TO '660787';
+GRANT SELECT ON paises TO '660787';
+GRANT SELECT ON morg TO '660787';
+GRANT SELECT ON grupo_menuautocom TO '660787';
+GRANT SELECT ON niveles_autocom TO '660787';
+GRANT SELECT ON menuautocom TO '660787';
+GRANT SELECT ON ptel_centrix TO '660787';
+GRANT SELECT ON ptel_depen TO '660787';
+GRANT SELECT ON ptel_personal TO '660787';		
+GRANT INSERT ON ptel_centrix TO '660787';
+GRANT INSERT ON ptel_depen TO '660787';
+GRANT INSERT ON ptel_personal TO '660787';		
+GRANT UPDATE ON ptel_centrix TO '660787';
+GRANT UPDATE ON ptel_depen TO '660787';
+GRANT UPDATE ON ptel_personal TO '660787';
+			
+
+?>

@@ -1,0 +1,91 @@
+=INFORMACION
+select per_catalogo,gra_desc_md,arm_desc_md,per_ape1,per_ape2,
+       per_nom1,per_nom2,per_desc_empleo,per_grado
+from mper,grados,armas,morg
+where per_plaza = org_plaza and      
+      arm_codigo = per_arma and
+      gra_codigo = per_grado and
+      org_dependencia = 1710
+order by per_grado desc 
+
+
+50277494
+54159241
+
+================================INFORMATICOS
+
+SELECT per_catalogo,gra_desc_ct,arm_desc_ct, per_nom1,per_nom2,per_ape1,
+            per_ape2,dep_desc_ct,per_desc_empleo,per_grado   
+      FROM mper,grados,armas,dcur,cursos,morg,mdep
+      WHERE per_catalogo = cur_catalogo and
+            cur_curso in (0950,1019,1052) and
+            dcur.cur_curso = cursos.cur_codigo and
+            per_grado = gra_codigo and
+            per_plaza = org_plaza and
+            per_plaza not in (9999,99999) and    
+            org_dependencia = dep_llave and      
+            mper.per_arma = arm_codigo and       
+            gra_clase in (1,2) and   
+            per_situacion in
+       ('11','1T',"12","13","1I","1L","1M","1N","1O","1P","1Q","1R","1S","1U")
+     union   
+     SELECT per_catalogo,gra_desc_ct,arm_desc_ct, per_nom1,per_nom2,per_ape1,
+            per_ape2,dep_desc_ct,per_desc_empleo,per_grado   
+
+============================BEOS
+SELECT       per_catalogo, gra_desc_md, arm_desc_md, per_ape1, per_ape2,
+             per_nom1, per_nom2, per_desc_empleo, dep_desc_md
+FROM         mper, morg, mdep, grados, armas     
+WHERE        per_plaza = org_plaza   
+AND          per_grado = gra_codigo  
+AND          per_arma = arm_codigo   
+AND          org_dependencia = dep_llave         
+AND          gra_clase  in (1,2,4,6) 
+AND          per_situacion in ("11","T0")
+AND          dep_llave = 2680
+ORDER BY per_grado desc,per_catalogo  
+
+=================QUIENES ESTUVIERON
+SELECT       per_catalogo, gra_desc_md, arm_desc_md, per_ape1, per_ape2,
+             per_nom1, per_nom2, per_desc_empleo, dep_desc_md, pue_desc, per_fec_nomb
+FROM         mper, morg, mdep, grados, armas, dpue     
+WHERE        per_plaza = org_plaza   
+AND          per_grado = gra_codigo 
+AND 		 gra_codigo = pue_grado 
+AND          per_arma = arm_codigo
+AND 		 arm_codigo = pue_arma   
+AND          org_dependencia = dep_llave         
+ 
+AND          gra_clase  in (1,2) 
+AND          per_situacion in ("11","T0")
+AND 		per_catalogo = pue_catalogo
+and 	pue_desc matches "AGR.FTIOCC*"
+ORDER BY per_grado desc,per_catalogo 
+
+pue_fec_nom
+pue_fec_cese
+
+
+=================QUIENES ESTUVIERON
+SELECT       per_catalogo, gra_desc_md, arm_desc_md, per_ape1, per_ape2,
+             per_nom1, per_nom2, per_desc_empleo, dep_desc_md, pue_desc, per_fec_nomb
+FROM         mper, morg, mdep, grados, armas, dpue     
+WHERE        per_plaza = org_plaza   
+AND          per_grado = gra_codigo  
+AND          per_arma = arm_codigo
+AND 		 arm_codigo = pue_arma   
+AND          org_dependencia = dep_llave         
+AND          gra_clase  in (1,2) 
+AND          per_situacion in ("11","T0")
+AND 		per_catalogo = pue_catalogo
+and 	pue_desc matches "AGR.FTIOCC*"
+ORDER BY per_grado desc,per_catalogo 
+
+
+
+
+ matches "*BTN*" 
+AND          dep_llave = 2680
+where 
+
+ MECANIZADA 

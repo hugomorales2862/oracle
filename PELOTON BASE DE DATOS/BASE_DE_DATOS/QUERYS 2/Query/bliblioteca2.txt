@@ -1,0 +1,81 @@
+QUERY BIBLIOTECA 1
+select lib_titulo, edi_nombre, aut_nombre1, gen_descripcion
+from libros, editorial, genero, autor
+where lib_editorial=edi_codigo and lib_genero=gen_codigo and lib_autor=aut_codigo
+order by lib_titulo, lib_autor, lib_editorial, lib_genero
+
+QUERY BIBLIOTECA 2
+UPDATE libros SET lib_editorial = 1 WHERE lib_genero = 1
+
+QUERY BIBLIOTECA 3
+UPDATE prestamo, usuario set pre_usuario = 0 where  lib_situacion = 1
+
+QUERY BIBLIOTECA 4 
+usu_cod, usu_rol, usu_nombre1, usu_apellido1, usu_telefono, usu_identificacion, usu_ubicacion, usu_edad, usu_fecha_nac, usu_sexo, usu_situacion, usu_dpi
+
+QUERY BIBLIOTECA 7.
+select per_nombre1, per_apellido1, per_edad, per_sexo
+from bib_personal
+where per_edad < 18
+group by per_sexo, per_edad, per_nombre1, per_apellido1 
+order by per_sexo
+
+QUERY BIBLIOTECA 8.
+select  per_cod, per_nombre1, per_apellido1, pre_codigo
+from bib_prestamo, bib_personal
+where pre_codigo = per_cod
+and pre_fec_fin >= "2015-12-02"
+
+QUERY BIBLIOTECA 9.
+select lib_titulo, lib_estado from bib_libros
+group by lib_estado, lib_titulo
+order by lib_estado
+
+QUERY BIBLIOTECA 10
+select 
+
+select lib_titulo, edi_nombre, aut_nombre1, gen_descripcion, lib_fecha_edicion, lib_estado, pre_fec_ini, pre_fec_fin
+from libros, editorial, genero, autor, prestamos
+where lib_editorial=edi_codigo and lib_genero=gen_codigo and lib_autor=aut_codigo
+order by lib_titulo, lib_autor, lib_editorial, lib_genero, pre_fec_ini, pre_fec_fin
+
+QUERY PUBLICIDAD 1
+
+select * from cliente
+
+QUERY PUBLICIDAD 3
+select web_codigo, web_nombre, web_url, web_topico, web_situacion
+from pub_web
+
+
+QUERY PUBLICIDAD 4
+NO ENCUENTRO SOLUCION
+
+
+QUERY PUBLICIDAD 5
+select anu_codigo, anu_nombre 
+from pub_anuncio
+
+QUERY PRUBLICIDAD 6.
+SELECT anu_codigo, anu_nombre, anu_tipo, cat_nombre, anu_precio
+FROM pub_anuncio, pub_categoria
+WHERE anu_categoria = cat_codigo
+ORDER BY anu_precio, anu_codigo, anu_nombre, anu_tipo ASC
+ 
+QUERY PRUBLICIDAD 7.
+SELECT SUM (anu_precio)
+FROM pub_anuncio, pub_detalle_anu
+WHERE det_anuncio = anu_codigo
+AND year(det_fecha_ini) =2015
+ 
+
+QUERY PRUBLICIDAD 8.
+SELECT cli_nombre1, anu_nombre, web_nombre
+FROM pub_cliente, pub_factura, pub_detalle_factura, pub_anuncio,
+pub_detalle_anu, pub_web
+WHERE fac_cliente = cli_codigo 
+AND detf_factura = fac_codigo
+AND detf_anuncio = anu_codigo
+AND det_anuncio = anu_codigo
+AND det_web = web_codigo
+AND cli_nombre1 = "CARLOS"

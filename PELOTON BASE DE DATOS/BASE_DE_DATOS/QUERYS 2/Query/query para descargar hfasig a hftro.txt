@@ -1,0 +1,10 @@
+select hfa_plaza, hfa_fecha, hfa_Depen, hfa_jerarquia, hfa_catalogo,
+hfa_grado, hfa_desc_empleo, "T0", hfa_prog, hfa_grupo, hfa_sueldo, 0,
+hfa_prima_prof, hfa_prima_esp, hfa_gastos_rep, hfa_bono_ali, 
+hfa_aguinaldo, hfa_bono_14,hfa_bon_emerg, 250, 51, hfa_hos_mil, 
+(hfa_bon_emerg+hfa_sueldo+250+hfa_gastos_rep), hfa_liquido,
+0,hfa_corrida, hfa_cuenta, "", "", hfa_prima_resp
+from hfasig
+where hfa_catalogo>1000000
+and year(hfa_fecha)=2013
+and month(hfa_fecha)=06

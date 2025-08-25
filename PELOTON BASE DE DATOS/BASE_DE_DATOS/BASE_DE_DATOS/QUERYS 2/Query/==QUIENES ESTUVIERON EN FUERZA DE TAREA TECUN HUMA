@@ -1,0 +1,97 @@
+==QUIENES ESTUVIERON EN FUERZA DE TAREA TECUN HUMAN=========>>>>>>INF MECANIZADA 
+unload to techun.txt
+SELECT       per_catalogo, gra_desc_md, arm_desc_md, per_ape1, per_ape2,
+             per_nom1, per_nom2, per_desc_empleo, dep_desc_md, pue_desc, per_fec_nomb
+FROM         mper, morg, mdep, grados, armas, dpue
+WHERE        per_plaza = org_plaza
+AND          per_grado = gra_codigo
+AND              gra_codigo = pue_grado
+AND          per_arma = arm_codigo
+AND              arm_codigo = pue_arma
+AND             per_catalogo = pue_catalogo
+AND             pue_grado = per_grado     
+--AND                   pue_fec_nomb = per_fec_nomb
+AND          org_dependencia = dep_llave
+AND          gra_clase  in (1,2)  
+AND          per_situacion in ("11","T0")
+and     pue_desc matches  "*AGR.FTIOCC*"
+ORDER BY per_grado desc,per_catalogo 
+ 
+
+===============QUIENES ESTUVIERON EN FUERZA DE TAREA CHORTI=========>>>>>>INF MECANIZADA 
+SELECT       per_catalogo, gra_desc_md, arm_desc_md, per_ape1, per_ape2,
+             per_nom1, per_nom2, per_desc_empleo, dep_desc_md, pue_desc, per_fec_nomb
+FROM         mper, morg, mdep, grados, armas, dpue
+WHERE        per_plaza = org_plaza
+AND          per_grado = gra_codigo
+AND              gra_codigo = pue_grado
+AND          per_arma = arm_codigo
+AND              arm_codigo = pue_arma
+AND             per_catalogo = pue_catalogo
+AND             pue_grado = per_grado     
+--AND                   pue_fec_nomb = per_fec_nomb
+AND          org_dependencia = dep_llave
+AND          gra_clase  in (1,2)  
+AND          per_situacion in ("11","T0")
+and     pue_desc matches  "*INF. MECA*"
+ORDER BY per_grado desc,per_catalogo 
+
+INF.MECAN.2DA.BDA."GCRC"
+
+BTN.INF.MECAN
+BTN.INF.MEC.
+BTN.INF.MECANIZADA 
+.1CIA.BTN.INF.MECAN.2DA.BDA.
+"*BTN.INF.MEC.*"
+
+unload to TECUN HUMAN.txt
+SELECT       per_catalogo, gra_desc_md, arm_desc_md, per_ape1, per_ape2,
+             per_nom1, per_nom2, per_desc_empleo, dep_desc_md, pue_desc, per_fec_nomb
+FROM         mper, morg, mdep, grados, armas, dpue
+WHERE        per_plaza = org_plaza
+AND          per_grado = gra_codigo
+AND              gra_codigo = pue_grado
+AND          per_arma = arm_codigo
+AND              arm_codigo = pue_arma
+AND             per_catalogo = pue_catalogo      
+AND             pue_grado = per_grado      
+AND YEAR pue_fec_nomb = 2012
+--AND                   pue_fec_nomb = per_fec_nomb        
+AND          org_dependencia = dep_llave
+AND          gra_clase  in (1,2)
+AND          per_situacion in ("11","T0")
+and     pue_desc matches  "*VICEMINISTRO*"
+ORDER BY per_grado desc,per_catalogo
+
+
+OF.AGRG.FZA.TAR.OCC.
+MINISTRO DE LA DEFENSA NACIONAL
+MINDEFNAC
+VICE-MINDEFNAC.
+
+VICEMINISTRO DEL MINISTERIO DEFENSA NACIONAL
+
+
+
+plataforma de correspondencia
+	agregar unos departamentos---->asignar al especialista
+
+
+	espacio para la Direccion de PErsonal
+					SEGUN MANUAL DE ESTADO MAYOR	
+
+					_______________
+					  CATALOGO
+					   Y CLAVE
+					_______________
+
+
+RESPONSABLE DEL DOCUMENTO
+	MENSAJE, PROVIDENCIA, OFICIO
+
+
+	EL CODIGO DE CORRESPONDENCIA
+	AGREGARLE UNA CASILLA
+
+	APROX DE 6 NUMERO
+

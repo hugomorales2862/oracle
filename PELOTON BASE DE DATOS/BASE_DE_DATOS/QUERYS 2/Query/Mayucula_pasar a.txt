@@ -1,0 +1,4 @@
+update armas set gra_desc_cort = UPPER(arm_dsc),
+arm_dsm = UPPER(arm_dsm),
+arm_dsl = UPPER(arm_dsl)
+WHERE 1 = 1

@@ -1,0 +1,40 @@
+
+"este query es para jalar los datos anteriores"
+
+select veh_cat, desp_veh_cat, veh_cha, desp_veh_cha,
+veh_mot, desp_veh_mot, veh_pla, desp_veh_pla, col_desc_md,
+desp_veh_col, sit_desc_md, desp_veh_sit, dep_desc_md,
+desp_veh_dep, veh_usuario,gra_desc_ct, arm_desc_ct,
+ per_nom1, per_nom2,
+per_ape1, per_ape2, desp_veh_usuario, accion, hora
+from aud_lmveh, lcolor, lsit_veh, mdep, mper, grados, armas
+where veh_col=col_cod and  
+veh_sit=sit_cod and
+veh_dep=dep_llave and
+veh_usuario = per_catalogo and
+per_grado = gra_codigo and
+per_arma = arm_codigo and 
+ accion ="U"      
+
+"este query es para jalar los datos con los cambios efectuados"
+
+unload to fer2.txt
+
+ select veh_cat, desp_veh_cat, veh_cha, desp_veh_cha,
+veh_mot, desp_veh_mot, veh_pla, desp_veh_pla,
+veh_col,  col_desc_md,veh_sit,sit_desc_md,
+veh_dep,  dep_desc_md,veh_usuario,
+desp_veh_usuario,gra_desc_ct, arm_desc_ct,
+ per_nom1, per_nom2,
+per_ape1, per_ape2, accion, hora
+from aud_lmveh, lcolor, lsit_veh, 
+mdep, mper, grados, armas
+where desp_veh_col=col_cod and
+desp_veh_sit=sit_cod and
+desp_veh_dep=dep_llave and
+desp_veh_usuario = per_catalogo and
+per_grado = gra_codigo and
+per_arma = arm_codigo and
+ accion ="U" 
+
+

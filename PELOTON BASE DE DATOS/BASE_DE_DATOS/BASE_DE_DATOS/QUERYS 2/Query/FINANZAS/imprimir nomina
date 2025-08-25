@@ -1,0 +1,23 @@
+HERC->ZEUS
+CD impresiones
+ftp
+===ZEUS==
+root
+De35Mbkl
+
+CD Impresiones
+put archivo.out
+
+by 
+
+lp -dibm6400 cola_comadena05.out
+
+lp p800 negra_01.out
+lp lp
+P_8134a1
+lprm  para cancelar todas las impresiones
+
+
+192.168.73.1
+
+barrientos giron
